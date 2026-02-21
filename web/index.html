@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>How Much Faster is WebAssembly?</title>
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            background: #f7f2ff;
+            color: #4a3b5c;
+            text-align: center;
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: #6b4fa0;
+        }
+
+        section {
+            background: white;
+            padding: 25px;
+            margin: 30px auto;
+            width: 90%;
+            max-width: 900px;
+            border-radius: 18px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            color: #6b4fa0;
+        }
+
+        input[type="file"] {
+            padding: 12px;
+            background: #e8d9ff;
+            border-radius: 10px;
+            border: 2px dashed #b79ce6;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .race-row {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .race-col {
+            width: 45%;
+            min-width: 280px;
+        }
+
+        canvas {
+            width: 100%;
+            border-radius: 12px;
+            margin-top: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        p {
+            font-weight: 600;
+            margin-top: 10px;
+            color: #7a5bbf;
+        }
+
+        button {
+            background: #c7a6ff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: #b48cff;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+<h1>How Much Faster is WebAssembly?</h1>
+
+<section>
+    <input type="file" id="upload">
+</section>
+
+<section>
+    <h2>Race 1: Simple Grayscale (Light Math)</h2>
+    <button id="runGrayRace">Run Grayscale Race</button>
+
+    <div class="race-row">
+        <div class="race-col">
+            <h3>JS</h3>
+            <canvas id="jsGrayCanvas"></canvas>
+            <p id="jsGrayTime"></p>
+        </div>
+
+        <div class="race-col">
+            <h3>WASM</h3>
+            <canvas id="wasmGrayCanvas"></canvas>
+            <p id="wasmGrayTime"></p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Race 2: Sharpen Filter (Heavy Task)</h2>
+    <button id="runSharpenRace">Run Sharpen Race</button>
+
+    <div class="race-row">
+        <div class="race-col">
+            <h3>JS</h3>
+            <canvas id="jsSharpCanvas"></canvas>
+            <p id="jsSharpTime"></p>
+        </div>
+
+        <div class="race-col">
+            <h3>WASM</h3>
+            <canvas id="wasmSharpCanvas"></canvas>
+            <p id="wasmSharpTime"></p>
+        </div>
+    </div>
+</section>
+
+<script type="module" src="main.js"></script>
+
+</body>
+</html>
