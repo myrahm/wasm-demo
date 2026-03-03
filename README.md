@@ -32,7 +32,7 @@
    - [Rust Sharpen](#rust-sharpen)
 8. [Troubleshooting](#8-troubleshooting)
 9. [Clean-up](#9-clean-up)
-10. [JavaScript vs WebAssembly — Side by Side](#10-javascript-vs-webassembly--side-by-side)
+10. [JavaScript vs WebAssembly: Side by Side](#10-javascript-vs-webassembly-side-by-side)
 11. [Why Is WASM Faster?](#11-why-is-wasm-faster)
 12. [Key Takeaways](#12-key-takeaways)
 13. [Further Reading](#13-further-reading)
