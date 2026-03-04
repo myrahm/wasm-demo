@@ -25,17 +25,20 @@ function jsGrayscale(img, canvas) {
     canvas.height = img.height;
 
     ctx.drawImage(img, 0, 0);
-    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height); // 1 - GET FLAT ARRAY
     const pixels = imageData.data;
 
-    const start = performance.now();
+    const start = performance.now(); // 2 - TIMER START
+
+    // 3 - LOOP 
     for (let i = 0; i < pixels.length; i += 4) {
         const gray = (pixels[i] + pixels[i + 1] + pixels[i + 2]) / 3;
         pixels[i] = gray;
         pixels[i + 1] = gray;
         pixels[i + 2] = gray;
     }
-    const end = performance.now();
+
+    const end = performance.now(); // 2 - TIME END
 
     ctx.putImageData(imageData, 0, 0);
     return end - start;
@@ -53,7 +56,7 @@ function jsSharpen(img, canvas) {
     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     const pixels = imageData.data;
 
-    // Sharpen kernel
+    // 1 - CONVOLUTION KERNEL
     const kernel = [
          0, -1,  0,
         -1,  5, -1,
@@ -62,11 +65,13 @@ function jsSharpen(img, canvas) {
 
     const start = performance.now();
 
+    // 2 - COPY ARRAY 
     const copy = new Uint8ClampedArray(pixels);
 
     const w = canvas.width;
     const h = canvas.height;
 
+    // 3 - FOUR NESTED LOOPS
     for (let y = 1; y < h - 1; y++) {
         for (let x = 1; x < w - 1; x++) {
             let r = 0, g = 0, b = 0;
