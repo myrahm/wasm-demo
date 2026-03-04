@@ -1,10 +1,12 @@
 use wasm_bindgen::prelude::*;
 
-#[wasm_bindgen]
-pub fn grayscale(pixels: &mut [u8]) {
+
+#[wasm_bindgen] // 1 - IMPORTANT LINE
+pub fn grayscale(pixels: &mut [u8]) { // 2 - FUNCTION SIGNATURE
     let length = pixels.len();
     let mut i = 0;
 
+    // 3 - GENERAL LOGIC
     while i < length {
         let r = pixels[i] as u32;
         let g = pixels[i + 1] as u32;
@@ -28,7 +30,7 @@ pub fn sharpen(pixels: &mut [u8], width: usize, height: usize) {
          0, -1,  0
     ];
 
-    let mut output = pixels.to_vec();
+    let mut output = pixels.to_vec(); // 1 - READ-ONLY COPY
 
     for y in 1..height - 1 {
         for x in 1..width - 1 {
@@ -50,11 +52,12 @@ pub fn sharpen(pixels: &mut [u8], width: usize, height: usize) {
             }
 
             let idx = (y * width + x) * 4;
+            // 2 - COMPILES TO A SINGLE MATH INSTRUCTION
             output[idx] = r.clamp(0, 255) as u8;
             output[idx + 1] = g.clamp(0, 255) as u8;
             output[idx + 2] = b.clamp(0, 255) as u8;
         }
     }
 
-    pixels.copy_from_slice(&output);
+    pixels.copy_from_slice(&output); // 3 - WRITES RESULT TO SHARED WASM MEMORY BUFFER
 }
