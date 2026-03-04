@@ -1,5 +1,5 @@
 # WebAssembly Demo Guide
-### CPS730 — Tech Demo Companion | Group 7
+### CPS730 — Tech Demo Companion | Group 3
 
 > **How to use this guide:** This README lives alongside the demo repo at [github.com/myrahm/wasm-demo](https://github.com/myrahm/wasm-demo). It covers everything from background concepts to a full walkthrough of the code, so you can revisit any part of the demo on your own after the session.
 
@@ -840,4 +840,4 @@ Grayscale does 1 computation per pixel, even JavaScript JIT handles this reasona
 
 ---
 
-*CPS730 Tech Demo — Group 7 | Myrah Mohammed · Jay Patel · Kavya Sagar Chudasama · Disha Pradipkumar Patel · Elli Min · Muhadisa Raza · Genevive Sanchez*
+*CPS730 Tech Demo — Group 3 | Myrah Mohammed · Jay Patel · Kavya Sagar Chudasama · Disha Pradipkumar Patel · Elli Min · Muhadisa Raza · Genevive Sanchez*
