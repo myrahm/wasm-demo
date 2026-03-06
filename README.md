@@ -833,7 +833,6 @@ Grayscale does 1 computation per pixel, even JavaScript JIT handles this reasona
 | [WebAssembly.org](https://webassembly.org) | Official site — spec, use cases, supported languages |
 | [MDN: WebAssembly](https://developer.mozilla.org/en-US/docs/WebAssembly) | Browser API reference, tutorials |
 | [WebAssembly Core Spec (W3C)](https://www.w3.org/TR/wasm-core-2/) | The formal specification |
-| [wasm-bindgen docs](https://rustwasm.github.io/wasm-bindgen/) | How Rust-to-JS bindings work |
 | [Rust and WebAssembly Book](https://rustwasm.github.io/docs/book/) | End-to-end guide for building WASM with Rust |
 | [Lin Clark's Cartoon Intro to WASM](https://www.smashingmagazine.com/2017/05/abridged-cartoon-introduction-webassembly/) | Excellent conceptual overview, no prior knowledge needed |
 | [Jakob Meier's WASM Road](https://www.jakobmeier.ch/wasm-road-0) | Deep dive into WASM's stack machine and virtual ISA |
